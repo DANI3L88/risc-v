@@ -39,6 +39,4 @@ Summary for main.cpp:
         iii. Create a Inst object, then call the replaceInst() function and immediately swap it with object of the appropriate subclass    
         iv. Call the generateBinary() function and output the machine code.     
 When the constructor for a subclass object of Inst is called, it immediately generates the correct machine code.
-
-###### (Cleanup of the code should happen as soon as is convenient)   
-
+<pre> 
