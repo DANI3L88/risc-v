@@ -15,7 +15,7 @@
 Note! This program DOES support all other programs! (In theory, I have not done intensive testing to ensure the accuracy of the conversions)
 
 Terminal command: ./a.out riscv.txt
-(replace "riscv.txt" with whatever filepath you use)
+(replace "riscv.txt" with whatever filepath you please)
 
     example code (as given in the homework description):   
         add x2,x2,x23   
