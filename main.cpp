@@ -6,8 +6,7 @@
 //  Copyright © 2021 Daniel Tai. All rights reserved.
 //
 
-//test edit to see how git works
-//beep boop beep boop
+//never overwrite with this version!!
 
 #include <iostream>
 #include <string>
@@ -16,33 +15,17 @@
 #include "risc-v.h"
 using namespace std;
 
-//needs: opcode, operands, offset
-//string translateInst(string opcode, string operands, int offset);
 string replaceInst(Inst *&);
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
     string inputs[100];
     string labels[100];
     string inputo;
     string output = "nothing";
     int linesTotal = 0;
     
-    //cout << "begun" << endl;
-    
-    //test area
-    /*
-    string in = "2";//"x2,x2,x23";
-    int num = stoi(in);
-    cout << num << endl;
-    
-    //*/
-    
     ifstream inFile;
     inFile.open(argv[1]);
-    //cin >> inputo;//debug
-    //inFile.open(inputo);
-    //cout << "begun 1" << endl;
     
     if(!inFile.is_open())
     {
@@ -50,9 +33,8 @@ int main(int argc, const char * argv[]) {
         return 0;
     }
     
-    while(getline(inFile, inputo)) //while(getline(cin, inputo))
+    while(getline(inFile, inputo))
     {
-        //cout << inputo << endl;
         inputs[linesTotal] = inputo;
         
         int col = -1;
@@ -77,20 +59,7 @@ int main(int argc, const char * argv[]) {
             return 0;
         }
     }
-    /*
-    cout << "labels?" << endl;
-    for(int a = 0; a < linesTotal; a++)
-    {
-        cout << a << ": " << labels[a] << endl;
-    }
-    */
-    //debug
-    /*
-    for(int i = 0; i < linesTotal; i++)
-    {
-        cout << inputs[i] << endl;
-    }
-    */
+    
     //separation + decide if branch occurs
     string parts[3];
     for (int i = 0; i < linesTotal; i++)
@@ -109,8 +78,6 @@ int main(int argc, const char * argv[]) {
             partCount++;
         }
         
-        //cout << parts[0] << endl;
-        
         //separate
         int o = 0;
         if(partCount == 3)
@@ -123,9 +90,6 @@ int main(int argc, const char * argv[]) {
         //find offset !! note that this is NOT the literal distance
         if(opcode[0] == 'b' || opcode == "jal")
         {
-            //cout << "!find offset (currently unsupported)!/n offset set to -1" << endl;//
-            //offset = -1;
-            
             //find your label
             int loc = -1;
             int c = int(operands.length()-1);
@@ -141,7 +105,7 @@ int main(int argc, const char * argv[]) {
             int len = int(operands.length() - loc);
             loc++;
             string targL = operands.substr(loc, len);
-            //cout << targL << endl;//
+            
             //find where it is
             int curr = i;
             int targ = -1;
@@ -158,28 +122,16 @@ int main(int argc, const char * argv[]) {
                 cout << "maybe check input or sth, idk" << endl;
             }
             
-            //calculate distance
-            //store value
+            //calculate distance store value
             offset = (targ - curr)*4; //already divided by 2
         }
         
-        //cout << "opcode: |" << opcode << "| operands: |" << operands << "| offset: " << offset << endl;//
-        
         //translate
-        //cout << opcode << " " << operands << " " << offset << endl;
-        //string output = translateInst(opcode, operands, offset);
         Inst * target = new Inst(opcode, operands, offset);
-        //Inst instructi(opcode, operands, offset);
-        //cout << replaceInst(target) << endl;
         replaceInst(target);
         output = target->generateBinary();
-        //Inst * rinst = new RInst(target);//
-        //cout << rinst->generateBinary() << endl;//
         //output
-        //cout << i << ": " << output << endl;//
         cout << output << endl;
-        //cout << "00000001011100010000000100110011" << endl;
-        
     }
     
     inFile.close();
@@ -197,7 +149,6 @@ string replaceInst(Inst * &obj)
     {
         if(opcode == types[i])
         {
-            //found = true;
             a = i;
             break;
         }
@@ -208,7 +159,6 @@ string replaceInst(Inst * &obj)
         case 0 ... 1://2
         {
             result = "u";//expression
-            //obj = new
             obja = new UInst(obj);
         }
         break;
@@ -262,9 +212,6 @@ string replaceInst(Inst * &obj)
         }
         break;
         }
-        //delete obj;
-        //cout << obja->generateBinary() << endl;
         obj = obja;
-        //cout << result << en
     return result;
 }
