@@ -17,15 +17,30 @@ Note! This program DOES support all other programs! (In theory, I have not done 
 Terminal command: ./a.out riscv.txt
 (replace "riscv.txt" with whatever filepath you please)
 
-    example code (as given in the homework description):   
-        add x2,x2,x23   
-        addi x24,x24,2   
-        bne x24,x23,L2   
-        sw x27,0(x10)   
-        beq x0,x0,L1   
-    L2: sw x1,0(x2)   
-    L1: addi x24,x24,1   
-
+    example code:   
+        add x2,x2,x23
+        addi x24,x24,2
+        bne x24,x23,L2
+        sw x27,0(x10)
+        beq x0,x0,L1
+    L2: sw x1,0(x2)
+    L1: addi x24,x24,1
+        jalr x0,0(x1)
+        jal x1,L2
+        lui x1,100
+        auipc x1,100 
+    example output:
+    00000001011100010000000100110011
+    00000000001011000000110000010011
+    00000001011111000001011001100011
+    00000001101101010010000000100011
+    00000000000000000000010001100011
+    00000000000100010010000000100011
+    00000000000111000000110000010011
+    00000000000000001000000001100111
+    11111111010111111111000011101111
+    00000000000001100100000010110111
+    00000000000001100100000010010111
    
 ------------ Everything above this line is what you need to operate the code. ------------
 
