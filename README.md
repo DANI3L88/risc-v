@@ -1,10 +1,10 @@
 # Code for Project 1: Implementing RISC-V Assembler
 
-## Code decription: 
+## Code description: 
   Convert risc-v assembly code to machine language.
 
 
-## Details:
+### Details:
 1. Only supports RV32I instructions (minus the Fence instructions). 
 2. Reads input from a text file, outputs the results to screen.
 3. Format: [label:] (space) name (space) operands,operands,operands,...
@@ -28,8 +28,9 @@ Terminal command: ./a.out riscv.txt
 
    
 ------------ Everything above this line is what you need to operate the code. ------------
+
+### How this program works: Uses class constructors to generate the correct machine code for each instruction.
 <pre>
-How this program works: Uses class constructors to generate the correct machine code for each instruction.
 Summary for main.cpp: 
     1. Read entire text file, store within an array. While reading, detect if there are labels present in front, save labels into a separate array.  
     2. Iterate through the saved instructions. In each iteration, do the following:
@@ -39,6 +40,6 @@ Summary for main.cpp:
         iv. Call the generateBinary() function and output the machine code.     
 When the constructor for a subclass object of Inst is called, it immediately generates the correct machine code.  
 
-   
+<pre>
 (Cleanup of the code should happen as soon as is convenient)   
 <pre>
