@@ -38,5 +38,5 @@ Summary for main.cpp:
 &nbsp; &nbsp; ii. If the instruction uses labels, calculate the offset (using the label array)    
 &nbsp; &nbsp; iii. Create a Inst object, then call the replaceInst() function and immediately swap it with object of the appropriate subclass    
 &nbsp; &nbsp; iv. Call the generateBinary() function and output the machine code.     
-When the constructor for a subclass object of Inst is called, it immediately generates the correct machine code.
+&nbsp; When the constructor for a subclass object of Inst is called, it immediately generates the correct machine code.
 
