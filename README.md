@@ -14,6 +14,8 @@ Details:
     also: this code only supports jalr instructions written as: jalr rd,imm(rs1)
 4. Does NOT support assembly programs larger than 100 lines; this amount is arbitrary and exists simply because I didn't bother to make dynamic storage
 
+Note! This program DOES support all other programs! (In theory, I have not done intensive testing to ensure the accuracy of the conversions)
+
 example code (as given in the homework description):   
     add x2,x2,x23   
     addi x24,x24,2   
