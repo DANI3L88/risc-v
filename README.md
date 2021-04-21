@@ -29,6 +29,7 @@ Terminal command: ./a.out riscv.txt
         jal x1,L2
         lui x1,100
         auipc x1,100 
+        
     example output:
     00000001011100010000000100110011
     00000000001011000000110000010011
