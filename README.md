@@ -1,12 +1,10 @@
-# risc-v
+##Code for Project 1: Implementing RISC-V Assembler
 
-code for Project 1: Implementing RISC-V Assembler
-
-Code decription: 
+#Code decription: 
   Convert risc-v assembly code to machine language.
 
-<pre>
-Details:
+
+#Details:
 1. Only supports RV32I instructions (minus the Fence instructions). 
 2. Reads input from a text file, outputs the results to screen.
 3. Format: [label:] (space) name (space) operands,operands,operands,...
@@ -15,6 +13,8 @@ Details:
 4. Does NOT support assembly programs larger than 100 lines; this amount is arbitrary and exists simply because I didn't bother to make dynamic storage
 
 Note! This program DOES support all other programs! (In theory, I have not done intensive testing to ensure the accuracy of the conversions)
+
+Terminal command: 
 
 example code (as given in the homework description):   
     add x2,x2,x23   
@@ -41,4 +41,4 @@ When the constructor for a subclass object of Inst is called, it immediately gen
 This is more or less how this program works. 
 (Cleanup of the code should happen as soon as is convenient)
         
-<pre>
+
